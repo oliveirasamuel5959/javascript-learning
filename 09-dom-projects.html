@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+      <style>
+       
+      </style>
+  </head>
+
+  <body>
+
+    <button>Hello</button>
+    <button class="js-button">Second button</button>
+
+    <script>
+
+        console.log(document.querySelector("button"));
+
+        document.querySelector("button")
+            .innerHTML = "Click Me";
+
+        const buttonElement = document.querySelector(".js-button");
+        console.log(buttonElement);
+
+        buttonElement.innerHTML = "Don't Click Me";
+
+    </script>
+
+  </body>
+</html>
