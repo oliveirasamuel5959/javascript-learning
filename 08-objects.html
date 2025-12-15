@@ -10,26 +10,29 @@
   <body>
 
     <script>
-
-        // const product = {
-        //     name: "Laptop",
-        //     price: 1200,
-        //     inStock: true,
-        // };
-
-        // console.log(product);
-        // console.log(`Name: ${product.name}`);  // Accessing property
-        // product.name = "Gaming Laptop";  // Modifying property
-        // console.log(`Updated Name: ${product.name}`);
-        // console.log(product)
-
         const product2 = {
             name: "Shirt",
+            'delivery-time': "2 days",  // Property with special characters
+            rating: {
+              stars: 4.5,
+              count: 150
+            },
+            fun: function() {
+              console.log("This is a method inside the object.");
+            }
         };
 
         console.log(product2);
-        console.log(`Name: ${product2.name}`);  // Accessing propertys
-        console.log(product2['name']);  // Accessing property using bracket notation
+        console.log(product2.rating.count)
+        product2.fun();
+        console.log(typeof console.log);
+
+        // Converting object to JSON string and back
+        jsonString = JSON.stringify(product2)
+        console.log(jsonString);
+        console.log(JSON.parse(jsonString));
+
+        // Local storage example
     </script>
 
   </body>
