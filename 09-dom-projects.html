@@ -12,6 +12,16 @@
     <p>YouTube Subscribe Button</p>
     <button class="js-subscribe-button" onclick="subscribe()">Subscribe</button>
 
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping</p>
+    <p>Orders over $40 = FREE shipping</p>
+
+    <input class="js-cost-input" placeholder="Cost of order" 
+      onkeydown="handleCostKeydown(event)" />
+
+    <button onclick="shippingCalculator()">Calculate</button>
+    <p class="js-shipping-result"></p>
+
     <script>
 
       const youtubeSubButtonElement = document.querySelector(".js-subscribe-button");
@@ -23,6 +33,27 @@
           return;
         } else {
           youtubeSubButtonElement.innerHTML = "Subscribed";
+        }
+
+      }
+
+      function handleCostKeydown(event) {
+        if (event.key === 'Enter') {
+          shippingCalculator()
+        }
+      }
+
+      function shippingCalculator() {
+
+        let orderCost = Number(document.querySelector(".js-cost-input").value);
+        console.log(orderCost);
+
+        if (orderCost < 40) {
+          orderCost += 10;
+          console.log(typeof orderCost);
+          document.querySelector(".js-shipping-result").innerText = `$${orderCost}`;
+        } else {
+          document.querySelector(".js-shipping-result").innerText = `$${orderCost}`;
         }
 
       }
