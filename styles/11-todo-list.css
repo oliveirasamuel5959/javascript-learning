@@ -37,3 +37,9 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.container {
+  display: grid;
+  place-items: center; /* Centers horizontally and vertically */
+  height: 50vh;  
+}
