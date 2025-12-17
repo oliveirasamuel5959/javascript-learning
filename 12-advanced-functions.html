@@ -7,9 +7,24 @@
 
   <body>
 
-
+    <button onclick="" class="js-button">Click</button>
 
     <script>
+
+      const buttonElement = document.querySelector(".js-button");
+
+      const eventListener = () => {
+        console.log("clicked");
+      };
+
+      buttonElement.addEventListener("click", eventListener);
+
+      buttonElement.removeEventListener("click", eventListener);
+
+      buttonElement.addEventListener("click", () => {
+        console.log("clicked2");
+      });
+
       /*
       function greeting() {
         console.log("hello");
@@ -64,6 +79,7 @@
       }, 3000);
       */
 
+      /*
       [
         "make dinner",
         "wash dishes",
@@ -99,6 +115,16 @@
       const oneLine = () => 2 + 3;
 
       console.log(oneLine());
+
+      const object2 = {
+        method: () => {
+
+        },
+        method() {
+
+        }
+      };
+      */
     </script>
   </body>
 </html>
